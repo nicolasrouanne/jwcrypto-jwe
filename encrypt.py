@@ -1,4 +1,3 @@
-from pprint import pprint
 from jwcrypto import jwk, jwe
 from jwcrypto.common import json_encode, json_decode
 
