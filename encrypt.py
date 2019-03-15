@@ -1,3 +1,4 @@
+from pprint import pprint
 from jwcrypto import jwk, jwe
 from jwcrypto.common import json_encode, json_decode
 
@@ -19,5 +20,6 @@ protected_header = {
 jwetoken = jwe.JWE(payload.encode('utf-8'),
                    recipient=public_key,
                    protected=protected_header)
-enc = jwetoken.serialize(compact=True)
+enc = jwetoken.serialize()
+# pprint(vars(jwetoken))
 print(enc)
