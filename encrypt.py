@@ -20,6 +20,7 @@ protected_header = {
 jwetoken = jwe.JWE(payload.encode('utf-8'),
                    recipient=public_key,
                    protected=protected_header)
-enc = jwetoken.serialize()
-# pprint(vars(jwetoken))
-print(enc)
+enc_JSON = jwetoken.serialize()
+enc = jwetoken.serialize(compact=True)
+print("JSON:\n", enc_JSON, "\n")
+print("Compact:\n", enc)
